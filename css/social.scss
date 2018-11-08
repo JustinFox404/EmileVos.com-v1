@@ -1,0 +1,38 @@
+$social-block: 55px;
+$social-animation: 0.21s;
+$black: #1d1d1d;
+.social {
+  width: $social-block;
+  height: $social-block;
+  display: inline-block;
+  transition: color $social-animation ease-in-out;
+  position: relative;
+  text-align: center;
+  margin-right: 0.25rem;
+  svg {
+    margin-top: 3.5px;
+    color: white;
+  }
+  &:hover {
+    svg {
+      color: $black;
+    }
+    transition: color $social-animation ease-in-out;
+    &:after {
+      height: $social-block;
+      transition: height $social-animation ease-in-out;
+    }
+  }
+  &:after {
+    content: "";
+    z-index: -2;
+    background: white;
+    width: $social-block;
+    height: 0;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: height $social-animation ease-in-out;
+  }
+}

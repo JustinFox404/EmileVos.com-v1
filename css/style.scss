@@ -1,0 +1,82 @@
+@import "footer";
+@import "ssh";
+@import "nav.css";
+@import "social.css";
+@import "work";
+$color: #ffffff;
+$black: #1d1d1d;
+.bold {
+  font-weight: bold;
+}
+a {
+  color: #71ffff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+body {
+  background-color: $black;
+  font-family: Roboto, Verdana, sans-serif;
+  color: white;
+  margin: 0;
+}
+@mixin device-sm {
+  @media (min-width: 840px) {
+    @content
+  }
+}
+@mixin device-md {
+  @media (min-width: 950px) {
+    @content
+  }
+}
+@mixin device-lg {
+  @media (min-width: 1170px) {
+    @content
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include device-sm {
+    max-width: 840px;
+  }
+  @include device-md {
+    max-width: 950px;
+  }
+  @include device-lg {
+    max-width: 1170px;
+  }
+}
+
+.button {
+  background-color: $color;
+  padding: 10px 30px;
+  width: 170px;
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.button::before {
+  content: '';
+  width: 150%;
+  height: 100%;
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+}
+.botton:hover::before {
+  left: 0;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}

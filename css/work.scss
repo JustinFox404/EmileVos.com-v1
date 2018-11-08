@@ -1,0 +1,102 @@
+@mixin device-sm {
+  @media (min-width: 840px) {
+    @content
+  }
+}
+@mixin device-md {
+  @media (min-width: 950px) {
+    @content
+  }
+}
+@mixin device-lg {
+  @media (min-width: 1170px) {
+    @content
+  }
+}
+$black: #1d1d1d;
+
+.work-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 2rem;
+  @include device-md {
+    grid-column-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include device-lg {
+    grid-column-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .work-item {
+    grid-column: auto;
+    min-height: 100px;
+    min-width: 100px;
+    grid-row: auto;
+    display: block;
+    position: relative;
+    background-color: white;
+    max-height: 200px;
+    &:hover {
+      background-color: white;
+      transition: 0.21s;
+      font-size: 18px;
+      img {
+        transition: 0.15s;
+        transform: scale(1.15);
+      }
+      .work-content-wrapper {
+        transition: 0.30s;
+        transition-delay: 0.25s;
+        max-height: 100%;
+      }
+    }
+    .work-badge {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      top: 0;
+      right: 0;
+      padding: 4px;
+      background-color: $black;
+    }
+    .work-content-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 0;
+      height: 100%;
+      width: 100%;
+      transition: 0.21s;
+      background-color: white;
+      overflow: hidden;
+      color: $black;
+      .work-content {
+        margin: 10px;
+        font-size: 15px;
+        .work-icons {
+          color: black;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .work-image-wrapper {
+      width: 100%;
+      height: 200px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      .work-image {
+        color: black;
+        margin: auto;
+        max-height: 180px;
+        max-width: 75%;
+        height: auto;
+        width: auto;
+        vertical-align: middle;
+
+      }
+    }
+  }
+}

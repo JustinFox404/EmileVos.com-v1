@@ -1,0 +1,36 @@
+.ssh {
+  font-family: Consolas, sans-serif !important;
+}
+.command-line__text {
+  min-height: 20px;
+}
+.ssh-input-field {
+  font-weight: bold;
+}
+.ssh-input {
+  border: none;
+  font-family: Consolas, sans-serif !important;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  width: auto;
+}
+
+.ssh-input-field::after {
+  content: "_";
+}
+.ssh-input::value::after {
+  content: "_";
+  display: block;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+  right: -20px;
+  width: 150%;
+  height: 100%;
+}
+
+.ssh-input:focus {
+  outline: none;
+}

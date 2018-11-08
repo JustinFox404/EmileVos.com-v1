@@ -1,0 +1,31 @@
+.social {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  transition: color 0.21s ease-in-out;
+  position: relative;
+  text-align: center;
+  margin-right: 0.25rem; }
+  .social svg {
+    margin-top: 3.5px;
+    color: white; }
+  .social:hover {
+    transition: color 0.21s ease-in-out; }
+    .social:hover svg {
+      color: #1d1d1d; }
+    .social:hover:after {
+      height: 55px;
+      transition: height 0.21s ease-in-out; }
+  .social:after {
+    content: "";
+    z-index: -2;
+    background: white;
+    width: 55px;
+    height: 0;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: height 0.21s ease-in-out; }
+
+/*# sourceMappingURL=social.css.map */
